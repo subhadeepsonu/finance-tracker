@@ -1,6 +1,6 @@
 generator client {
   provider = "prisma-client-js"
-  output   = "./prisma/generated/client"
+  output   = "../generated/client"
 }
 
 datasource db {
@@ -13,6 +13,7 @@ model User {
   ClerkId       String         @unique
   incomeSources IncomeSource[]
   transactions  Transaction[]
+  categories    Category[]
 }
 
 model IncomeSource {
@@ -44,5 +45,7 @@ model Transaction {
 model Category {
   id           String        @id @default(cuid())
   name         String
+  userId       String
+  user         User          @relation(fields: [userId], references: [id])
   transactions Transaction[]
 }

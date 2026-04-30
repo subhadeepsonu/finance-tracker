@@ -2,6 +2,8 @@ import type { Metadata } from 'next'
 import { ClerkProvider, Show, SignInButton, SignUpButton, UserButton } from '@clerk/nextjs'
 import { Geist, Geist_Mono } from 'next/font/google'
 import './globals.css'
+import ReactQueryProvider from '@/components/providers/react-query-provider'
+import Link from 'next/link'
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -25,37 +27,54 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <nav className="fixed top-0 z-50 w-full border-b border-slate-200 bg-white/80 backdrop-blur">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="flex h-16 items-center justify-between">
-              <div className="flex items-center gap-2">
-                <div className="h-8 w-8 rounded-lg bg-gradient-to-br from-blue-600 to-blue-700" />
-                <span className="font-semibold text-slate-900">BucketPay</span>
-              </div>
-              <ClerkProvider>
-                <header className="flex justify-end items-center p-4 gap-4 h-16">
-                  <Show when="signed-out">
-                    <SignInButton />
-                    <SignUpButton>
-                      <button className="bg-[#6c47ff] text-white rounded-full font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 cursor-pointer">
-                        Sign Up
-                      </button>
-                    </SignUpButton>
-                  </Show>
+      <ReactQueryProvider>
+        <ClerkProvider>
+          <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+            <nav className="fixed top-0 z-50 w-full border-b border-slate-200 bg-white/80 backdrop-blur">
+              <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div className="flex h-16 items-center justify-between">
+
+                  {/* Logo */}
+                  <div className="flex items-center gap-2">
+                    <div className="h-8 w-8 rounded-lg bg-gradient-to-br from-blue-600 to-blue-700" />
+                    <span className="font-semibold text-slate-900">BucketPay</span>
+                  </div>
+
+                  {/* Center Nav (only when signed in) */}
                   <Show when="signed-in">
-                    <UserButton />
+                    <div className="hidden md:flex items-center gap-6">
+                      <Link href="/dashboard" className="text-sm font-medium text-slate-700 hover:text-blue-600 transition">
+                        Dashboard
+                      </Link>
+                      <Link href="/categories" className="text-sm font-medium text-slate-700 hover:text-blue-600 transition">
+                        Categories
+                      </Link>
+                    </div>
                   </Show>
-                </header>
+                  {/* Right Section */}
+                  <div className="flex items-center gap-4">
+                    <Show when="signed-out">
+                      <SignInButton />
+                      <SignUpButton>
+                        <button className="bg-[#6c47ff] text-white rounded-full font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 cursor-pointer">
+                          Sign Up
+                        </button>
+                      </SignUpButton>
+                    </Show>
 
-              </ClerkProvider>
+                    <Show when="signed-in">
+                      <UserButton />
+                    </Show>
+                  </div>
 
-            </div>
-          </div>
-        </nav>
-        {children}
+                </div>
+              </div>
+            </nav>
+            {children}
 
-      </body>
+          </body>
+        </ClerkProvider>
+      </ReactQueryProvider>
     </html>
   )
 }

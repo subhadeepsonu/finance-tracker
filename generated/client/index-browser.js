@@ -144,7 +144,8 @@ exports.Prisma.TransactionScalarFieldEnum = {
 
 exports.Prisma.CategoryScalarFieldEnum = {
   id: 'id',
-  name: 'name'
+  name: 'name',
+  userId: 'userId'
 };
 
 exports.Prisma.SortOrder = {
