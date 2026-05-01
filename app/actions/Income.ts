@@ -5,7 +5,8 @@ export async function getAllIncomes(userId: string) {
     try {
         const Incomes = await prisma.incomeSource.findMany({
             where: {
-                userId
+                userId,
+                IsActive: true
             }
         })
         return Incomes;
@@ -50,10 +51,13 @@ export async function UpdateIncome(params: { userId: string; incomeId: string; n
 
 export async function DeleteIncome(params: { userId: string; incomeId: string }) {
     try {
-        const deletedIncome = await prisma.incomeSource.delete({
+        const deletedIncome = await prisma.incomeSource.update({
             where: {
                 id: params.incomeId,
                 userId: params.userId
+            },
+            data: {
+                IsActive: false
             }
         })
         return deletedIncome;

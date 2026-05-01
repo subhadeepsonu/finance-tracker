@@ -129,7 +129,8 @@ exports.Prisma.UserScalarFieldEnum = {
 exports.Prisma.IncomeSourceScalarFieldEnum = {
   id: 'id',
   userId: 'userId',
-  name: 'name'
+  name: 'name',
+  IsActive: 'IsActive'
 };
 
 exports.Prisma.TransactionScalarFieldEnum = {
@@ -138,6 +139,7 @@ exports.Prisma.TransactionScalarFieldEnum = {
   amount: 'amount',
   incomeSourceId: 'incomeSourceId',
   Type: 'Type',
+  IsActive: 'IsActive',
   date: 'date',
   categoryId: 'categoryId'
 };
@@ -145,7 +147,8 @@ exports.Prisma.TransactionScalarFieldEnum = {
 exports.Prisma.CategoryScalarFieldEnum = {
   id: 'id',
   name: 'name',
-  userId: 'userId'
+  userId: 'userId',
+  IsActive: 'IsActive'
 };
 
 exports.Prisma.SortOrder = {

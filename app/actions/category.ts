@@ -5,7 +5,8 @@ export async function getAllCategories(userId: string) {
     try {
         const categories = await prisma.category.findMany({
             where: {
-                userId: userId
+                userId: userId,
+                IsActive: true
             }
         });
         return categories;
@@ -47,10 +48,13 @@ export async function updateCategory(params: { userId: string; categoryId: strin
 
 export async function deleteCategory(params: { userId: string; categoryId: string }) {
     try {
-        const deletedCategory = await prisma.category.delete({
+        const deletedCategory = await prisma.category.update({
             where: {
                 id: params.categoryId,
                 userId: params.userId
+            },
+            data: {
+                IsActive: false
             }
         });
         return deletedCategory;

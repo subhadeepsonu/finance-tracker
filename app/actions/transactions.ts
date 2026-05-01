@@ -7,7 +7,8 @@ export async function getAllTransactions(userId: string, sourceId: string) {
         const resp = await prisma.transaction.findMany({
             where: {
                 userId,
-                incomeSourceId: sourceId
+                incomeSourceId: sourceId,
+                IsActive: true
             },
             include: {
                 category: true
@@ -64,10 +65,13 @@ export async function updateTransaction(userId: string, transactionId: string, a
 
 export async function deleteTransaction(userId: string, transactionId: string) {
     try {
-        const resp = await prisma.transaction.deleteMany({
+        const resp = await prisma.transaction.update({
             where: {
                 id: transactionId,
                 userId
+            },
+            data: {
+                IsActive: false
             }
         })
         return resp

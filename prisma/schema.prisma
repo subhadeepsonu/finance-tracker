@@ -21,6 +21,7 @@ model IncomeSource {
   user         User          @relation(fields: [userId], references: [id])
   userId       String
   name         String
+  IsActive     Boolean       @default(true)
   transactions Transaction[]
 }
 
@@ -37,6 +38,7 @@ model Transaction {
   IncomeSource   IncomeSource    @relation(fields: [incomeSourceId], references: [id])
   incomeSourceId String
   Type           TransactionType
+  IsActive       Boolean         @default(true)
   date           DateTime        @default(now())
   category       Category        @relation(fields: [categoryId], references: [id])
   categoryId     String
@@ -46,6 +48,7 @@ model Category {
   id           String        @id @default(cuid())
   name         String
   userId       String
+  IsActive     Boolean       @default(true)
   user         User          @relation(fields: [userId], references: [id])
   transactions Transaction[]
 }
