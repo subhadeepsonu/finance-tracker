@@ -1280,18 +1280,24 @@ export namespace Prisma {
     id: string | null
     email: string | null
     ClerkId: string | null
+    CreatedAt: Date | null
+    UpdatedAt: Date | null
   }
 
   export type UserMaxAggregateOutputType = {
     id: string | null
     email: string | null
     ClerkId: string | null
+    CreatedAt: Date | null
+    UpdatedAt: Date | null
   }
 
   export type UserCountAggregateOutputType = {
     id: number
     email: number
     ClerkId: number
+    CreatedAt: number
+    UpdatedAt: number
     _all: number
   }
 
@@ -1300,18 +1306,24 @@ export namespace Prisma {
     id?: true
     email?: true
     ClerkId?: true
+    CreatedAt?: true
+    UpdatedAt?: true
   }
 
   export type UserMaxAggregateInputType = {
     id?: true
     email?: true
     ClerkId?: true
+    CreatedAt?: true
+    UpdatedAt?: true
   }
 
   export type UserCountAggregateInputType = {
     id?: true
     email?: true
     ClerkId?: true
+    CreatedAt?: true
+    UpdatedAt?: true
     _all?: true
   }
 
@@ -1391,6 +1403,8 @@ export namespace Prisma {
     id: string
     email: string
     ClerkId: string
+    CreatedAt: Date
+    UpdatedAt: Date
     _count: UserCountAggregateOutputType | null
     _min: UserMinAggregateOutputType | null
     _max: UserMaxAggregateOutputType | null
@@ -1414,6 +1428,8 @@ export namespace Prisma {
     id?: boolean
     email?: boolean
     ClerkId?: boolean
+    CreatedAt?: boolean
+    UpdatedAt?: boolean
     incomeSources?: boolean | User$incomeSourcesArgs<ExtArgs>
     transactions?: boolean | User$transactionsArgs<ExtArgs>
     categories?: boolean | User$categoriesArgs<ExtArgs>
@@ -1424,21 +1440,27 @@ export namespace Prisma {
     id?: boolean
     email?: boolean
     ClerkId?: boolean
+    CreatedAt?: boolean
+    UpdatedAt?: boolean
   }, ExtArgs["result"]["user"]>
 
   export type UserSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     email?: boolean
     ClerkId?: boolean
+    CreatedAt?: boolean
+    UpdatedAt?: boolean
   }, ExtArgs["result"]["user"]>
 
   export type UserSelectScalar = {
     id?: boolean
     email?: boolean
     ClerkId?: boolean
+    CreatedAt?: boolean
+    UpdatedAt?: boolean
   }
 
-  export type UserOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "email" | "ClerkId", ExtArgs["result"]["user"]>
+  export type UserOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "email" | "ClerkId" | "CreatedAt" | "UpdatedAt", ExtArgs["result"]["user"]>
   export type UserInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     incomeSources?: boolean | User$incomeSourcesArgs<ExtArgs>
     transactions?: boolean | User$transactionsArgs<ExtArgs>
@@ -1459,6 +1481,8 @@ export namespace Prisma {
       id: string
       email: string
       ClerkId: string
+      CreatedAt: Date
+      UpdatedAt: Date
     }, ExtArgs["result"]["user"]>
     composites: {}
   }
@@ -1888,6 +1912,8 @@ export namespace Prisma {
     readonly id: FieldRef<"User", 'String'>
     readonly email: FieldRef<"User", 'String'>
     readonly ClerkId: FieldRef<"User", 'String'>
+    readonly CreatedAt: FieldRef<"User", 'DateTime'>
+    readonly UpdatedAt: FieldRef<"User", 'DateTime'>
   }
     
 
@@ -2386,6 +2412,8 @@ export namespace Prisma {
     userId: string | null
     name: string | null
     IsActive: boolean | null
+    CreatedAt: Date | null
+    UpdatedAt: Date | null
   }
 
   export type IncomeSourceMaxAggregateOutputType = {
@@ -2393,6 +2421,8 @@ export namespace Prisma {
     userId: string | null
     name: string | null
     IsActive: boolean | null
+    CreatedAt: Date | null
+    UpdatedAt: Date | null
   }
 
   export type IncomeSourceCountAggregateOutputType = {
@@ -2400,6 +2430,8 @@ export namespace Prisma {
     userId: number
     name: number
     IsActive: number
+    CreatedAt: number
+    UpdatedAt: number
     _all: number
   }
 
@@ -2409,6 +2441,8 @@ export namespace Prisma {
     userId?: true
     name?: true
     IsActive?: true
+    CreatedAt?: true
+    UpdatedAt?: true
   }
 
   export type IncomeSourceMaxAggregateInputType = {
@@ -2416,6 +2450,8 @@ export namespace Prisma {
     userId?: true
     name?: true
     IsActive?: true
+    CreatedAt?: true
+    UpdatedAt?: true
   }
 
   export type IncomeSourceCountAggregateInputType = {
@@ -2423,6 +2459,8 @@ export namespace Prisma {
     userId?: true
     name?: true
     IsActive?: true
+    CreatedAt?: true
+    UpdatedAt?: true
     _all?: true
   }
 
@@ -2503,6 +2541,8 @@ export namespace Prisma {
     userId: string
     name: string
     IsActive: boolean
+    CreatedAt: Date
+    UpdatedAt: Date
     _count: IncomeSourceCountAggregateOutputType | null
     _min: IncomeSourceMinAggregateOutputType | null
     _max: IncomeSourceMaxAggregateOutputType | null
@@ -2527,6 +2567,8 @@ export namespace Prisma {
     userId?: boolean
     name?: boolean
     IsActive?: boolean
+    CreatedAt?: boolean
+    UpdatedAt?: boolean
     user?: boolean | UserDefaultArgs<ExtArgs>
     transactions?: boolean | IncomeSource$transactionsArgs<ExtArgs>
     _count?: boolean | IncomeSourceCountOutputTypeDefaultArgs<ExtArgs>
@@ -2537,6 +2579,8 @@ export namespace Prisma {
     userId?: boolean
     name?: boolean
     IsActive?: boolean
+    CreatedAt?: boolean
+    UpdatedAt?: boolean
     user?: boolean | UserDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["incomeSource"]>
 
@@ -2545,6 +2589,8 @@ export namespace Prisma {
     userId?: boolean
     name?: boolean
     IsActive?: boolean
+    CreatedAt?: boolean
+    UpdatedAt?: boolean
     user?: boolean | UserDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["incomeSource"]>
 
@@ -2553,9 +2599,11 @@ export namespace Prisma {
     userId?: boolean
     name?: boolean
     IsActive?: boolean
+    CreatedAt?: boolean
+    UpdatedAt?: boolean
   }
 
-  export type IncomeSourceOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "userId" | "name" | "IsActive", ExtArgs["result"]["incomeSource"]>
+  export type IncomeSourceOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "userId" | "name" | "IsActive" | "CreatedAt" | "UpdatedAt", ExtArgs["result"]["incomeSource"]>
   export type IncomeSourceInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     user?: boolean | UserDefaultArgs<ExtArgs>
     transactions?: boolean | IncomeSource$transactionsArgs<ExtArgs>
@@ -2579,6 +2627,8 @@ export namespace Prisma {
       userId: string
       name: string
       IsActive: boolean
+      CreatedAt: Date
+      UpdatedAt: Date
     }, ExtArgs["result"]["incomeSource"]>
     composites: {}
   }
@@ -3008,6 +3058,8 @@ export namespace Prisma {
     readonly userId: FieldRef<"IncomeSource", 'String'>
     readonly name: FieldRef<"IncomeSource", 'String'>
     readonly IsActive: FieldRef<"IncomeSource", 'Boolean'>
+    readonly CreatedAt: FieldRef<"IncomeSource", 'DateTime'>
+    readonly UpdatedAt: FieldRef<"IncomeSource", 'DateTime'>
   }
     
 
@@ -3480,6 +3532,8 @@ export namespace Prisma {
     IsActive: boolean | null
     date: Date | null
     categoryId: string | null
+    CreatedAt: Date | null
+    UpdatedAt: Date | null
   }
 
   export type TransactionMaxAggregateOutputType = {
@@ -3491,6 +3545,8 @@ export namespace Prisma {
     IsActive: boolean | null
     date: Date | null
     categoryId: string | null
+    CreatedAt: Date | null
+    UpdatedAt: Date | null
   }
 
   export type TransactionCountAggregateOutputType = {
@@ -3502,6 +3558,8 @@ export namespace Prisma {
     IsActive: number
     date: number
     categoryId: number
+    CreatedAt: number
+    UpdatedAt: number
     _all: number
   }
 
@@ -3523,6 +3581,8 @@ export namespace Prisma {
     IsActive?: true
     date?: true
     categoryId?: true
+    CreatedAt?: true
+    UpdatedAt?: true
   }
 
   export type TransactionMaxAggregateInputType = {
@@ -3534,6 +3594,8 @@ export namespace Prisma {
     IsActive?: true
     date?: true
     categoryId?: true
+    CreatedAt?: true
+    UpdatedAt?: true
   }
 
   export type TransactionCountAggregateInputType = {
@@ -3545,6 +3607,8 @@ export namespace Prisma {
     IsActive?: true
     date?: true
     categoryId?: true
+    CreatedAt?: true
+    UpdatedAt?: true
     _all?: true
   }
 
@@ -3643,6 +3707,8 @@ export namespace Prisma {
     IsActive: boolean
     date: Date
     categoryId: string
+    CreatedAt: Date
+    UpdatedAt: Date
     _count: TransactionCountAggregateOutputType | null
     _avg: TransactionAvgAggregateOutputType | null
     _sum: TransactionSumAggregateOutputType | null
@@ -3673,6 +3739,8 @@ export namespace Prisma {
     IsActive?: boolean
     date?: boolean
     categoryId?: boolean
+    CreatedAt?: boolean
+    UpdatedAt?: boolean
     user?: boolean | UserDefaultArgs<ExtArgs>
     IncomeSource?: boolean | IncomeSourceDefaultArgs<ExtArgs>
     category?: boolean | CategoryDefaultArgs<ExtArgs>
@@ -3687,6 +3755,8 @@ export namespace Prisma {
     IsActive?: boolean
     date?: boolean
     categoryId?: boolean
+    CreatedAt?: boolean
+    UpdatedAt?: boolean
     user?: boolean | UserDefaultArgs<ExtArgs>
     IncomeSource?: boolean | IncomeSourceDefaultArgs<ExtArgs>
     category?: boolean | CategoryDefaultArgs<ExtArgs>
@@ -3701,6 +3771,8 @@ export namespace Prisma {
     IsActive?: boolean
     date?: boolean
     categoryId?: boolean
+    CreatedAt?: boolean
+    UpdatedAt?: boolean
     user?: boolean | UserDefaultArgs<ExtArgs>
     IncomeSource?: boolean | IncomeSourceDefaultArgs<ExtArgs>
     category?: boolean | CategoryDefaultArgs<ExtArgs>
@@ -3715,9 +3787,11 @@ export namespace Prisma {
     IsActive?: boolean
     date?: boolean
     categoryId?: boolean
+    CreatedAt?: boolean
+    UpdatedAt?: boolean
   }
 
-  export type TransactionOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "userId" | "amount" | "incomeSourceId" | "Type" | "IsActive" | "date" | "categoryId", ExtArgs["result"]["transaction"]>
+  export type TransactionOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "userId" | "amount" | "incomeSourceId" | "Type" | "IsActive" | "date" | "categoryId" | "CreatedAt" | "UpdatedAt", ExtArgs["result"]["transaction"]>
   export type TransactionInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     user?: boolean | UserDefaultArgs<ExtArgs>
     IncomeSource?: boolean | IncomeSourceDefaultArgs<ExtArgs>
@@ -3750,6 +3824,8 @@ export namespace Prisma {
       IsActive: boolean
       date: Date
       categoryId: string
+      CreatedAt: Date
+      UpdatedAt: Date
     }, ExtArgs["result"]["transaction"]>
     composites: {}
   }
@@ -4184,6 +4260,8 @@ export namespace Prisma {
     readonly IsActive: FieldRef<"Transaction", 'Boolean'>
     readonly date: FieldRef<"Transaction", 'DateTime'>
     readonly categoryId: FieldRef<"Transaction", 'String'>
+    readonly CreatedAt: FieldRef<"Transaction", 'DateTime'>
+    readonly UpdatedAt: FieldRef<"Transaction", 'DateTime'>
   }
     
 
@@ -4618,6 +4696,8 @@ export namespace Prisma {
     name: string | null
     userId: string | null
     IsActive: boolean | null
+    CreatedAt: Date | null
+    UpdatedAt: Date | null
   }
 
   export type CategoryMaxAggregateOutputType = {
@@ -4625,6 +4705,8 @@ export namespace Prisma {
     name: string | null
     userId: string | null
     IsActive: boolean | null
+    CreatedAt: Date | null
+    UpdatedAt: Date | null
   }
 
   export type CategoryCountAggregateOutputType = {
@@ -4632,6 +4714,8 @@ export namespace Prisma {
     name: number
     userId: number
     IsActive: number
+    CreatedAt: number
+    UpdatedAt: number
     _all: number
   }
 
@@ -4641,6 +4725,8 @@ export namespace Prisma {
     name?: true
     userId?: true
     IsActive?: true
+    CreatedAt?: true
+    UpdatedAt?: true
   }
 
   export type CategoryMaxAggregateInputType = {
@@ -4648,6 +4734,8 @@ export namespace Prisma {
     name?: true
     userId?: true
     IsActive?: true
+    CreatedAt?: true
+    UpdatedAt?: true
   }
 
   export type CategoryCountAggregateInputType = {
@@ -4655,6 +4743,8 @@ export namespace Prisma {
     name?: true
     userId?: true
     IsActive?: true
+    CreatedAt?: true
+    UpdatedAt?: true
     _all?: true
   }
 
@@ -4735,6 +4825,8 @@ export namespace Prisma {
     name: string
     userId: string
     IsActive: boolean
+    CreatedAt: Date
+    UpdatedAt: Date
     _count: CategoryCountAggregateOutputType | null
     _min: CategoryMinAggregateOutputType | null
     _max: CategoryMaxAggregateOutputType | null
@@ -4759,6 +4851,8 @@ export namespace Prisma {
     name?: boolean
     userId?: boolean
     IsActive?: boolean
+    CreatedAt?: boolean
+    UpdatedAt?: boolean
     user?: boolean | UserDefaultArgs<ExtArgs>
     transactions?: boolean | Category$transactionsArgs<ExtArgs>
     _count?: boolean | CategoryCountOutputTypeDefaultArgs<ExtArgs>
@@ -4769,6 +4863,8 @@ export namespace Prisma {
     name?: boolean
     userId?: boolean
     IsActive?: boolean
+    CreatedAt?: boolean
+    UpdatedAt?: boolean
     user?: boolean | UserDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["category"]>
 
@@ -4777,6 +4873,8 @@ export namespace Prisma {
     name?: boolean
     userId?: boolean
     IsActive?: boolean
+    CreatedAt?: boolean
+    UpdatedAt?: boolean
     user?: boolean | UserDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["category"]>
 
@@ -4785,9 +4883,11 @@ export namespace Prisma {
     name?: boolean
     userId?: boolean
     IsActive?: boolean
+    CreatedAt?: boolean
+    UpdatedAt?: boolean
   }
 
-  export type CategoryOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "userId" | "IsActive", ExtArgs["result"]["category"]>
+  export type CategoryOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "userId" | "IsActive" | "CreatedAt" | "UpdatedAt", ExtArgs["result"]["category"]>
   export type CategoryInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     user?: boolean | UserDefaultArgs<ExtArgs>
     transactions?: boolean | Category$transactionsArgs<ExtArgs>
@@ -4811,6 +4911,8 @@ export namespace Prisma {
       name: string
       userId: string
       IsActive: boolean
+      CreatedAt: Date
+      UpdatedAt: Date
     }, ExtArgs["result"]["category"]>
     composites: {}
   }
@@ -5240,6 +5342,8 @@ export namespace Prisma {
     readonly name: FieldRef<"Category", 'String'>
     readonly userId: FieldRef<"Category", 'String'>
     readonly IsActive: FieldRef<"Category", 'Boolean'>
+    readonly CreatedAt: FieldRef<"Category", 'DateTime'>
+    readonly UpdatedAt: FieldRef<"Category", 'DateTime'>
   }
     
 
@@ -5700,7 +5804,9 @@ export namespace Prisma {
   export const UserScalarFieldEnum: {
     id: 'id',
     email: 'email',
-    ClerkId: 'ClerkId'
+    ClerkId: 'ClerkId',
+    CreatedAt: 'CreatedAt',
+    UpdatedAt: 'UpdatedAt'
   };
 
   export type UserScalarFieldEnum = (typeof UserScalarFieldEnum)[keyof typeof UserScalarFieldEnum]
@@ -5710,7 +5816,9 @@ export namespace Prisma {
     id: 'id',
     userId: 'userId',
     name: 'name',
-    IsActive: 'IsActive'
+    IsActive: 'IsActive',
+    CreatedAt: 'CreatedAt',
+    UpdatedAt: 'UpdatedAt'
   };
 
   export type IncomeSourceScalarFieldEnum = (typeof IncomeSourceScalarFieldEnum)[keyof typeof IncomeSourceScalarFieldEnum]
@@ -5724,7 +5832,9 @@ export namespace Prisma {
     Type: 'Type',
     IsActive: 'IsActive',
     date: 'date',
-    categoryId: 'categoryId'
+    categoryId: 'categoryId',
+    CreatedAt: 'CreatedAt',
+    UpdatedAt: 'UpdatedAt'
   };
 
   export type TransactionScalarFieldEnum = (typeof TransactionScalarFieldEnum)[keyof typeof TransactionScalarFieldEnum]
@@ -5734,7 +5844,9 @@ export namespace Prisma {
     id: 'id',
     name: 'name',
     userId: 'userId',
-    IsActive: 'IsActive'
+    IsActive: 'IsActive',
+    CreatedAt: 'CreatedAt',
+    UpdatedAt: 'UpdatedAt'
   };
 
   export type CategoryScalarFieldEnum = (typeof CategoryScalarFieldEnum)[keyof typeof CategoryScalarFieldEnum]
@@ -5776,6 +5888,20 @@ export namespace Prisma {
 
 
   /**
+   * Reference to a field of type 'DateTime'
+   */
+  export type DateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'DateTime'>
+    
+
+
+  /**
+   * Reference to a field of type 'DateTime[]'
+   */
+  export type ListDateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'DateTime[]'>
+    
+
+
+  /**
    * Reference to a field of type 'Boolean'
    */
   export type BooleanFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Boolean'>
@@ -5811,20 +5937,6 @@ export namespace Prisma {
 
 
   /**
-   * Reference to a field of type 'DateTime'
-   */
-  export type DateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'DateTime'>
-    
-
-
-  /**
-   * Reference to a field of type 'DateTime[]'
-   */
-  export type ListDateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'DateTime[]'>
-    
-
-
-  /**
    * Reference to a field of type 'Int'
    */
   export type IntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Int'>
@@ -5848,6 +5960,8 @@ export namespace Prisma {
     id?: StringFilter<"User"> | string
     email?: StringFilter<"User"> | string
     ClerkId?: StringFilter<"User"> | string
+    CreatedAt?: DateTimeFilter<"User"> | Date | string
+    UpdatedAt?: DateTimeFilter<"User"> | Date | string
     incomeSources?: IncomeSourceListRelationFilter
     transactions?: TransactionListRelationFilter
     categories?: CategoryListRelationFilter
@@ -5857,6 +5971,8 @@ export namespace Prisma {
     id?: SortOrder
     email?: SortOrder
     ClerkId?: SortOrder
+    CreatedAt?: SortOrder
+    UpdatedAt?: SortOrder
     incomeSources?: IncomeSourceOrderByRelationAggregateInput
     transactions?: TransactionOrderByRelationAggregateInput
     categories?: CategoryOrderByRelationAggregateInput
@@ -5869,6 +5985,8 @@ export namespace Prisma {
     AND?: UserWhereInput | UserWhereInput[]
     OR?: UserWhereInput[]
     NOT?: UserWhereInput | UserWhereInput[]
+    CreatedAt?: DateTimeFilter<"User"> | Date | string
+    UpdatedAt?: DateTimeFilter<"User"> | Date | string
     incomeSources?: IncomeSourceListRelationFilter
     transactions?: TransactionListRelationFilter
     categories?: CategoryListRelationFilter
@@ -5878,6 +5996,8 @@ export namespace Prisma {
     id?: SortOrder
     email?: SortOrder
     ClerkId?: SortOrder
+    CreatedAt?: SortOrder
+    UpdatedAt?: SortOrder
     _count?: UserCountOrderByAggregateInput
     _max?: UserMaxOrderByAggregateInput
     _min?: UserMinOrderByAggregateInput
@@ -5890,6 +6010,8 @@ export namespace Prisma {
     id?: StringWithAggregatesFilter<"User"> | string
     email?: StringWithAggregatesFilter<"User"> | string
     ClerkId?: StringWithAggregatesFilter<"User"> | string
+    CreatedAt?: DateTimeWithAggregatesFilter<"User"> | Date | string
+    UpdatedAt?: DateTimeWithAggregatesFilter<"User"> | Date | string
   }
 
   export type IncomeSourceWhereInput = {
@@ -5900,6 +6022,8 @@ export namespace Prisma {
     userId?: StringFilter<"IncomeSource"> | string
     name?: StringFilter<"IncomeSource"> | string
     IsActive?: BoolFilter<"IncomeSource"> | boolean
+    CreatedAt?: DateTimeFilter<"IncomeSource"> | Date | string
+    UpdatedAt?: DateTimeFilter<"IncomeSource"> | Date | string
     user?: XOR<UserScalarRelationFilter, UserWhereInput>
     transactions?: TransactionListRelationFilter
   }
@@ -5909,6 +6033,8 @@ export namespace Prisma {
     userId?: SortOrder
     name?: SortOrder
     IsActive?: SortOrder
+    CreatedAt?: SortOrder
+    UpdatedAt?: SortOrder
     user?: UserOrderByWithRelationInput
     transactions?: TransactionOrderByRelationAggregateInput
   }
@@ -5921,6 +6047,8 @@ export namespace Prisma {
     userId?: StringFilter<"IncomeSource"> | string
     name?: StringFilter<"IncomeSource"> | string
     IsActive?: BoolFilter<"IncomeSource"> | boolean
+    CreatedAt?: DateTimeFilter<"IncomeSource"> | Date | string
+    UpdatedAt?: DateTimeFilter<"IncomeSource"> | Date | string
     user?: XOR<UserScalarRelationFilter, UserWhereInput>
     transactions?: TransactionListRelationFilter
   }, "id">
@@ -5930,6 +6058,8 @@ export namespace Prisma {
     userId?: SortOrder
     name?: SortOrder
     IsActive?: SortOrder
+    CreatedAt?: SortOrder
+    UpdatedAt?: SortOrder
     _count?: IncomeSourceCountOrderByAggregateInput
     _max?: IncomeSourceMaxOrderByAggregateInput
     _min?: IncomeSourceMinOrderByAggregateInput
@@ -5943,6 +6073,8 @@ export namespace Prisma {
     userId?: StringWithAggregatesFilter<"IncomeSource"> | string
     name?: StringWithAggregatesFilter<"IncomeSource"> | string
     IsActive?: BoolWithAggregatesFilter<"IncomeSource"> | boolean
+    CreatedAt?: DateTimeWithAggregatesFilter<"IncomeSource"> | Date | string
+    UpdatedAt?: DateTimeWithAggregatesFilter<"IncomeSource"> | Date | string
   }
 
   export type TransactionWhereInput = {
@@ -5957,6 +6089,8 @@ export namespace Prisma {
     IsActive?: BoolFilter<"Transaction"> | boolean
     date?: DateTimeFilter<"Transaction"> | Date | string
     categoryId?: StringFilter<"Transaction"> | string
+    CreatedAt?: DateTimeFilter<"Transaction"> | Date | string
+    UpdatedAt?: DateTimeFilter<"Transaction"> | Date | string
     user?: XOR<UserScalarRelationFilter, UserWhereInput>
     IncomeSource?: XOR<IncomeSourceScalarRelationFilter, IncomeSourceWhereInput>
     category?: XOR<CategoryScalarRelationFilter, CategoryWhereInput>
@@ -5971,6 +6105,8 @@ export namespace Prisma {
     IsActive?: SortOrder
     date?: SortOrder
     categoryId?: SortOrder
+    CreatedAt?: SortOrder
+    UpdatedAt?: SortOrder
     user?: UserOrderByWithRelationInput
     IncomeSource?: IncomeSourceOrderByWithRelationInput
     category?: CategoryOrderByWithRelationInput
@@ -5988,6 +6124,8 @@ export namespace Prisma {
     IsActive?: BoolFilter<"Transaction"> | boolean
     date?: DateTimeFilter<"Transaction"> | Date | string
     categoryId?: StringFilter<"Transaction"> | string
+    CreatedAt?: DateTimeFilter<"Transaction"> | Date | string
+    UpdatedAt?: DateTimeFilter<"Transaction"> | Date | string
     user?: XOR<UserScalarRelationFilter, UserWhereInput>
     IncomeSource?: XOR<IncomeSourceScalarRelationFilter, IncomeSourceWhereInput>
     category?: XOR<CategoryScalarRelationFilter, CategoryWhereInput>
@@ -6002,6 +6140,8 @@ export namespace Prisma {
     IsActive?: SortOrder
     date?: SortOrder
     categoryId?: SortOrder
+    CreatedAt?: SortOrder
+    UpdatedAt?: SortOrder
     _count?: TransactionCountOrderByAggregateInput
     _avg?: TransactionAvgOrderByAggregateInput
     _max?: TransactionMaxOrderByAggregateInput
@@ -6021,6 +6161,8 @@ export namespace Prisma {
     IsActive?: BoolWithAggregatesFilter<"Transaction"> | boolean
     date?: DateTimeWithAggregatesFilter<"Transaction"> | Date | string
     categoryId?: StringWithAggregatesFilter<"Transaction"> | string
+    CreatedAt?: DateTimeWithAggregatesFilter<"Transaction"> | Date | string
+    UpdatedAt?: DateTimeWithAggregatesFilter<"Transaction"> | Date | string
   }
 
   export type CategoryWhereInput = {
@@ -6031,6 +6173,8 @@ export namespace Prisma {
     name?: StringFilter<"Category"> | string
     userId?: StringFilter<"Category"> | string
     IsActive?: BoolFilter<"Category"> | boolean
+    CreatedAt?: DateTimeFilter<"Category"> | Date | string
+    UpdatedAt?: DateTimeFilter<"Category"> | Date | string
     user?: XOR<UserScalarRelationFilter, UserWhereInput>
     transactions?: TransactionListRelationFilter
   }
@@ -6040,6 +6184,8 @@ export namespace Prisma {
     name?: SortOrder
     userId?: SortOrder
     IsActive?: SortOrder
+    CreatedAt?: SortOrder
+    UpdatedAt?: SortOrder
     user?: UserOrderByWithRelationInput
     transactions?: TransactionOrderByRelationAggregateInput
   }
@@ -6052,6 +6198,8 @@ export namespace Prisma {
     name?: StringFilter<"Category"> | string
     userId?: StringFilter<"Category"> | string
     IsActive?: BoolFilter<"Category"> | boolean
+    CreatedAt?: DateTimeFilter<"Category"> | Date | string
+    UpdatedAt?: DateTimeFilter<"Category"> | Date | string
     user?: XOR<UserScalarRelationFilter, UserWhereInput>
     transactions?: TransactionListRelationFilter
   }, "id">
@@ -6061,6 +6209,8 @@ export namespace Prisma {
     name?: SortOrder
     userId?: SortOrder
     IsActive?: SortOrder
+    CreatedAt?: SortOrder
+    UpdatedAt?: SortOrder
     _count?: CategoryCountOrderByAggregateInput
     _max?: CategoryMaxOrderByAggregateInput
     _min?: CategoryMinOrderByAggregateInput
@@ -6074,12 +6224,16 @@ export namespace Prisma {
     name?: StringWithAggregatesFilter<"Category"> | string
     userId?: StringWithAggregatesFilter<"Category"> | string
     IsActive?: BoolWithAggregatesFilter<"Category"> | boolean
+    CreatedAt?: DateTimeWithAggregatesFilter<"Category"> | Date | string
+    UpdatedAt?: DateTimeWithAggregatesFilter<"Category"> | Date | string
   }
 
   export type UserCreateInput = {
     id?: string
     email: string
     ClerkId: string
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
     incomeSources?: IncomeSourceCreateNestedManyWithoutUserInput
     transactions?: TransactionCreateNestedManyWithoutUserInput
     categories?: CategoryCreateNestedManyWithoutUserInput
@@ -6089,6 +6243,8 @@ export namespace Prisma {
     id?: string
     email: string
     ClerkId: string
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
     incomeSources?: IncomeSourceUncheckedCreateNestedManyWithoutUserInput
     transactions?: TransactionUncheckedCreateNestedManyWithoutUserInput
     categories?: CategoryUncheckedCreateNestedManyWithoutUserInput
@@ -6098,6 +6254,8 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     ClerkId?: StringFieldUpdateOperationsInput | string
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     incomeSources?: IncomeSourceUpdateManyWithoutUserNestedInput
     transactions?: TransactionUpdateManyWithoutUserNestedInput
     categories?: CategoryUpdateManyWithoutUserNestedInput
@@ -6107,6 +6265,8 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     ClerkId?: StringFieldUpdateOperationsInput | string
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     incomeSources?: IncomeSourceUncheckedUpdateManyWithoutUserNestedInput
     transactions?: TransactionUncheckedUpdateManyWithoutUserNestedInput
     categories?: CategoryUncheckedUpdateManyWithoutUserNestedInput
@@ -6116,24 +6276,32 @@ export namespace Prisma {
     id?: string
     email: string
     ClerkId: string
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
   }
 
   export type UserUpdateManyMutationInput = {
     id?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     ClerkId?: StringFieldUpdateOperationsInput | string
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type UserUncheckedUpdateManyInput = {
     id?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     ClerkId?: StringFieldUpdateOperationsInput | string
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type IncomeSourceCreateInput = {
     id?: string
     name: string
     IsActive?: boolean
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
     user: UserCreateNestedOneWithoutIncomeSourcesInput
     transactions?: TransactionCreateNestedManyWithoutIncomeSourceInput
   }
@@ -6143,6 +6311,8 @@ export namespace Prisma {
     userId: string
     name: string
     IsActive?: boolean
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
     transactions?: TransactionUncheckedCreateNestedManyWithoutIncomeSourceInput
   }
 
@@ -6150,6 +6320,8 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     IsActive?: BoolFieldUpdateOperationsInput | boolean
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     user?: UserUpdateOneRequiredWithoutIncomeSourcesNestedInput
     transactions?: TransactionUpdateManyWithoutIncomeSourceNestedInput
   }
@@ -6159,6 +6331,8 @@ export namespace Prisma {
     userId?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     IsActive?: BoolFieldUpdateOperationsInput | boolean
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     transactions?: TransactionUncheckedUpdateManyWithoutIncomeSourceNestedInput
   }
 
@@ -6167,12 +6341,16 @@ export namespace Prisma {
     userId: string
     name: string
     IsActive?: boolean
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
   }
 
   export type IncomeSourceUpdateManyMutationInput = {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     IsActive?: BoolFieldUpdateOperationsInput | boolean
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type IncomeSourceUncheckedUpdateManyInput = {
@@ -6180,6 +6358,8 @@ export namespace Prisma {
     userId?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     IsActive?: BoolFieldUpdateOperationsInput | boolean
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type TransactionCreateInput = {
@@ -6188,6 +6368,8 @@ export namespace Prisma {
     Type: $Enums.TransactionType
     IsActive?: boolean
     date?: Date | string
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
     user: UserCreateNestedOneWithoutTransactionsInput
     IncomeSource: IncomeSourceCreateNestedOneWithoutTransactionsInput
     category: CategoryCreateNestedOneWithoutTransactionsInput
@@ -6202,6 +6384,8 @@ export namespace Prisma {
     IsActive?: boolean
     date?: Date | string
     categoryId: string
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
   }
 
   export type TransactionUpdateInput = {
@@ -6210,6 +6394,8 @@ export namespace Prisma {
     Type?: EnumTransactionTypeFieldUpdateOperationsInput | $Enums.TransactionType
     IsActive?: BoolFieldUpdateOperationsInput | boolean
     date?: DateTimeFieldUpdateOperationsInput | Date | string
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     user?: UserUpdateOneRequiredWithoutTransactionsNestedInput
     IncomeSource?: IncomeSourceUpdateOneRequiredWithoutTransactionsNestedInput
     category?: CategoryUpdateOneRequiredWithoutTransactionsNestedInput
@@ -6224,6 +6410,8 @@ export namespace Prisma {
     IsActive?: BoolFieldUpdateOperationsInput | boolean
     date?: DateTimeFieldUpdateOperationsInput | Date | string
     categoryId?: StringFieldUpdateOperationsInput | string
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type TransactionCreateManyInput = {
@@ -6235,6 +6423,8 @@ export namespace Prisma {
     IsActive?: boolean
     date?: Date | string
     categoryId: string
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
   }
 
   export type TransactionUpdateManyMutationInput = {
@@ -6243,6 +6433,8 @@ export namespace Prisma {
     Type?: EnumTransactionTypeFieldUpdateOperationsInput | $Enums.TransactionType
     IsActive?: BoolFieldUpdateOperationsInput | boolean
     date?: DateTimeFieldUpdateOperationsInput | Date | string
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type TransactionUncheckedUpdateManyInput = {
@@ -6254,12 +6446,16 @@ export namespace Prisma {
     IsActive?: BoolFieldUpdateOperationsInput | boolean
     date?: DateTimeFieldUpdateOperationsInput | Date | string
     categoryId?: StringFieldUpdateOperationsInput | string
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type CategoryCreateInput = {
     id?: string
     name: string
     IsActive?: boolean
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
     user: UserCreateNestedOneWithoutCategoriesInput
     transactions?: TransactionCreateNestedManyWithoutCategoryInput
   }
@@ -6269,6 +6465,8 @@ export namespace Prisma {
     name: string
     userId: string
     IsActive?: boolean
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
     transactions?: TransactionUncheckedCreateNestedManyWithoutCategoryInput
   }
 
@@ -6276,6 +6474,8 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     IsActive?: BoolFieldUpdateOperationsInput | boolean
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     user?: UserUpdateOneRequiredWithoutCategoriesNestedInput
     transactions?: TransactionUpdateManyWithoutCategoryNestedInput
   }
@@ -6285,6 +6485,8 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     userId?: StringFieldUpdateOperationsInput | string
     IsActive?: BoolFieldUpdateOperationsInput | boolean
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     transactions?: TransactionUncheckedUpdateManyWithoutCategoryNestedInput
   }
 
@@ -6293,12 +6495,16 @@ export namespace Prisma {
     name: string
     userId: string
     IsActive?: boolean
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
   }
 
   export type CategoryUpdateManyMutationInput = {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     IsActive?: BoolFieldUpdateOperationsInput | boolean
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type CategoryUncheckedUpdateManyInput = {
@@ -6306,6 +6512,8 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     userId?: StringFieldUpdateOperationsInput | string
     IsActive?: BoolFieldUpdateOperationsInput | boolean
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type StringFilter<$PrismaModel = never> = {
@@ -6321,6 +6529,17 @@ export namespace Prisma {
     endsWith?: string | StringFieldRefInput<$PrismaModel>
     mode?: QueryMode
     not?: NestedStringFilter<$PrismaModel> | string
+  }
+
+  export type DateTimeFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeFilter<$PrismaModel> | Date | string
   }
 
   export type IncomeSourceListRelationFilter = {
@@ -6357,18 +6576,24 @@ export namespace Prisma {
     id?: SortOrder
     email?: SortOrder
     ClerkId?: SortOrder
+    CreatedAt?: SortOrder
+    UpdatedAt?: SortOrder
   }
 
   export type UserMaxOrderByAggregateInput = {
     id?: SortOrder
     email?: SortOrder
     ClerkId?: SortOrder
+    CreatedAt?: SortOrder
+    UpdatedAt?: SortOrder
   }
 
   export type UserMinOrderByAggregateInput = {
     id?: SortOrder
     email?: SortOrder
     ClerkId?: SortOrder
+    CreatedAt?: SortOrder
+    UpdatedAt?: SortOrder
   }
 
   export type StringWithAggregatesFilter<$PrismaModel = never> = {
@@ -6389,6 +6614,20 @@ export namespace Prisma {
     _max?: NestedStringFilter<$PrismaModel>
   }
 
+  export type DateTimeWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeWithAggregatesFilter<$PrismaModel> | Date | string
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedDateTimeFilter<$PrismaModel>
+    _max?: NestedDateTimeFilter<$PrismaModel>
+  }
+
   export type BoolFilter<$PrismaModel = never> = {
     equals?: boolean | BooleanFieldRefInput<$PrismaModel>
     not?: NestedBoolFilter<$PrismaModel> | boolean
@@ -6404,6 +6643,8 @@ export namespace Prisma {
     userId?: SortOrder
     name?: SortOrder
     IsActive?: SortOrder
+    CreatedAt?: SortOrder
+    UpdatedAt?: SortOrder
   }
 
   export type IncomeSourceMaxOrderByAggregateInput = {
@@ -6411,6 +6652,8 @@ export namespace Prisma {
     userId?: SortOrder
     name?: SortOrder
     IsActive?: SortOrder
+    CreatedAt?: SortOrder
+    UpdatedAt?: SortOrder
   }
 
   export type IncomeSourceMinOrderByAggregateInput = {
@@ -6418,6 +6661,8 @@ export namespace Prisma {
     userId?: SortOrder
     name?: SortOrder
     IsActive?: SortOrder
+    CreatedAt?: SortOrder
+    UpdatedAt?: SortOrder
   }
 
   export type BoolWithAggregatesFilter<$PrismaModel = never> = {
@@ -6446,17 +6691,6 @@ export namespace Prisma {
     not?: NestedEnumTransactionTypeFilter<$PrismaModel> | $Enums.TransactionType
   }
 
-  export type DateTimeFilter<$PrismaModel = never> = {
-    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
-    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
-    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    not?: NestedDateTimeFilter<$PrismaModel> | Date | string
-  }
-
   export type IncomeSourceScalarRelationFilter = {
     is?: IncomeSourceWhereInput
     isNot?: IncomeSourceWhereInput
@@ -6476,6 +6710,8 @@ export namespace Prisma {
     IsActive?: SortOrder
     date?: SortOrder
     categoryId?: SortOrder
+    CreatedAt?: SortOrder
+    UpdatedAt?: SortOrder
   }
 
   export type TransactionAvgOrderByAggregateInput = {
@@ -6491,6 +6727,8 @@ export namespace Prisma {
     IsActive?: SortOrder
     date?: SortOrder
     categoryId?: SortOrder
+    CreatedAt?: SortOrder
+    UpdatedAt?: SortOrder
   }
 
   export type TransactionMinOrderByAggregateInput = {
@@ -6502,6 +6740,8 @@ export namespace Prisma {
     IsActive?: SortOrder
     date?: SortOrder
     categoryId?: SortOrder
+    CreatedAt?: SortOrder
+    UpdatedAt?: SortOrder
   }
 
   export type TransactionSumOrderByAggregateInput = {
@@ -6534,25 +6774,13 @@ export namespace Prisma {
     _max?: NestedEnumTransactionTypeFilter<$PrismaModel>
   }
 
-  export type DateTimeWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
-    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
-    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    not?: NestedDateTimeWithAggregatesFilter<$PrismaModel> | Date | string
-    _count?: NestedIntFilter<$PrismaModel>
-    _min?: NestedDateTimeFilter<$PrismaModel>
-    _max?: NestedDateTimeFilter<$PrismaModel>
-  }
-
   export type CategoryCountOrderByAggregateInput = {
     id?: SortOrder
     name?: SortOrder
     userId?: SortOrder
     IsActive?: SortOrder
+    CreatedAt?: SortOrder
+    UpdatedAt?: SortOrder
   }
 
   export type CategoryMaxOrderByAggregateInput = {
@@ -6560,6 +6788,8 @@ export namespace Prisma {
     name?: SortOrder
     userId?: SortOrder
     IsActive?: SortOrder
+    CreatedAt?: SortOrder
+    UpdatedAt?: SortOrder
   }
 
   export type CategoryMinOrderByAggregateInput = {
@@ -6567,6 +6797,8 @@ export namespace Prisma {
     name?: SortOrder
     userId?: SortOrder
     IsActive?: SortOrder
+    CreatedAt?: SortOrder
+    UpdatedAt?: SortOrder
   }
 
   export type IncomeSourceCreateNestedManyWithoutUserInput = {
@@ -6613,6 +6845,10 @@ export namespace Prisma {
 
   export type StringFieldUpdateOperationsInput = {
     set?: string
+  }
+
+  export type DateTimeFieldUpdateOperationsInput = {
+    set?: Date | string
   }
 
   export type IncomeSourceUpdateManyWithoutUserNestedInput = {
@@ -6789,10 +7025,6 @@ export namespace Prisma {
     set?: $Enums.TransactionType
   }
 
-  export type DateTimeFieldUpdateOperationsInput = {
-    set?: Date | string
-  }
-
   export type UserUpdateOneRequiredWithoutTransactionsNestedInput = {
     create?: XOR<UserCreateWithoutTransactionsInput, UserUncheckedCreateWithoutTransactionsInput>
     connectOrCreate?: UserCreateOrConnectWithoutTransactionsInput
@@ -6887,6 +7119,17 @@ export namespace Prisma {
     not?: NestedStringFilter<$PrismaModel> | string
   }
 
+  export type NestedDateTimeFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeFilter<$PrismaModel> | Date | string
+  }
+
   export type NestedStringWithAggregatesFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel>
     in?: string[] | ListStringFieldRefInput<$PrismaModel>
@@ -6913,6 +7156,20 @@ export namespace Prisma {
     gt?: number | IntFieldRefInput<$PrismaModel>
     gte?: number | IntFieldRefInput<$PrismaModel>
     not?: NestedIntFilter<$PrismaModel> | number
+  }
+
+  export type NestedDateTimeWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeWithAggregatesFilter<$PrismaModel> | Date | string
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedDateTimeFilter<$PrismaModel>
+    _max?: NestedDateTimeFilter<$PrismaModel>
   }
 
   export type NestedBoolFilter<$PrismaModel = never> = {
@@ -6946,17 +7203,6 @@ export namespace Prisma {
     not?: NestedEnumTransactionTypeFilter<$PrismaModel> | $Enums.TransactionType
   }
 
-  export type NestedDateTimeFilter<$PrismaModel = never> = {
-    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
-    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
-    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    not?: NestedDateTimeFilter<$PrismaModel> | Date | string
-  }
-
   export type NestedFloatWithAggregatesFilter<$PrismaModel = never> = {
     equals?: number | FloatFieldRefInput<$PrismaModel>
     in?: number[] | ListFloatFieldRefInput<$PrismaModel>
@@ -6983,24 +7229,12 @@ export namespace Prisma {
     _max?: NestedEnumTransactionTypeFilter<$PrismaModel>
   }
 
-  export type NestedDateTimeWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
-    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
-    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    not?: NestedDateTimeWithAggregatesFilter<$PrismaModel> | Date | string
-    _count?: NestedIntFilter<$PrismaModel>
-    _min?: NestedDateTimeFilter<$PrismaModel>
-    _max?: NestedDateTimeFilter<$PrismaModel>
-  }
-
   export type IncomeSourceCreateWithoutUserInput = {
     id?: string
     name: string
     IsActive?: boolean
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
     transactions?: TransactionCreateNestedManyWithoutIncomeSourceInput
   }
 
@@ -7008,6 +7242,8 @@ export namespace Prisma {
     id?: string
     name: string
     IsActive?: boolean
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
     transactions?: TransactionUncheckedCreateNestedManyWithoutIncomeSourceInput
   }
 
@@ -7027,6 +7263,8 @@ export namespace Prisma {
     Type: $Enums.TransactionType
     IsActive?: boolean
     date?: Date | string
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
     IncomeSource: IncomeSourceCreateNestedOneWithoutTransactionsInput
     category: CategoryCreateNestedOneWithoutTransactionsInput
   }
@@ -7039,6 +7277,8 @@ export namespace Prisma {
     IsActive?: boolean
     date?: Date | string
     categoryId: string
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
   }
 
   export type TransactionCreateOrConnectWithoutUserInput = {
@@ -7055,6 +7295,8 @@ export namespace Prisma {
     id?: string
     name: string
     IsActive?: boolean
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
     transactions?: TransactionCreateNestedManyWithoutCategoryInput
   }
 
@@ -7062,6 +7304,8 @@ export namespace Prisma {
     id?: string
     name: string
     IsActive?: boolean
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
     transactions?: TransactionUncheckedCreateNestedManyWithoutCategoryInput
   }
 
@@ -7099,6 +7343,8 @@ export namespace Prisma {
     userId?: StringFilter<"IncomeSource"> | string
     name?: StringFilter<"IncomeSource"> | string
     IsActive?: BoolFilter<"IncomeSource"> | boolean
+    CreatedAt?: DateTimeFilter<"IncomeSource"> | Date | string
+    UpdatedAt?: DateTimeFilter<"IncomeSource"> | Date | string
   }
 
   export type TransactionUpsertWithWhereUniqueWithoutUserInput = {
@@ -7129,6 +7375,8 @@ export namespace Prisma {
     IsActive?: BoolFilter<"Transaction"> | boolean
     date?: DateTimeFilter<"Transaction"> | Date | string
     categoryId?: StringFilter<"Transaction"> | string
+    CreatedAt?: DateTimeFilter<"Transaction"> | Date | string
+    UpdatedAt?: DateTimeFilter<"Transaction"> | Date | string
   }
 
   export type CategoryUpsertWithWhereUniqueWithoutUserInput = {
@@ -7155,12 +7403,16 @@ export namespace Prisma {
     name?: StringFilter<"Category"> | string
     userId?: StringFilter<"Category"> | string
     IsActive?: BoolFilter<"Category"> | boolean
+    CreatedAt?: DateTimeFilter<"Category"> | Date | string
+    UpdatedAt?: DateTimeFilter<"Category"> | Date | string
   }
 
   export type UserCreateWithoutIncomeSourcesInput = {
     id?: string
     email: string
     ClerkId: string
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
     transactions?: TransactionCreateNestedManyWithoutUserInput
     categories?: CategoryCreateNestedManyWithoutUserInput
   }
@@ -7169,6 +7421,8 @@ export namespace Prisma {
     id?: string
     email: string
     ClerkId: string
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
     transactions?: TransactionUncheckedCreateNestedManyWithoutUserInput
     categories?: CategoryUncheckedCreateNestedManyWithoutUserInput
   }
@@ -7184,6 +7438,8 @@ export namespace Prisma {
     Type: $Enums.TransactionType
     IsActive?: boolean
     date?: Date | string
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
     user: UserCreateNestedOneWithoutTransactionsInput
     category: CategoryCreateNestedOneWithoutTransactionsInput
   }
@@ -7196,6 +7452,8 @@ export namespace Prisma {
     IsActive?: boolean
     date?: Date | string
     categoryId: string
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
   }
 
   export type TransactionCreateOrConnectWithoutIncomeSourceInput = {
@@ -7223,6 +7481,8 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     ClerkId?: StringFieldUpdateOperationsInput | string
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     transactions?: TransactionUpdateManyWithoutUserNestedInput
     categories?: CategoryUpdateManyWithoutUserNestedInput
   }
@@ -7231,6 +7491,8 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     ClerkId?: StringFieldUpdateOperationsInput | string
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     transactions?: TransactionUncheckedUpdateManyWithoutUserNestedInput
     categories?: CategoryUncheckedUpdateManyWithoutUserNestedInput
   }
@@ -7255,6 +7517,8 @@ export namespace Prisma {
     id?: string
     email: string
     ClerkId: string
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
     incomeSources?: IncomeSourceCreateNestedManyWithoutUserInput
     categories?: CategoryCreateNestedManyWithoutUserInput
   }
@@ -7263,6 +7527,8 @@ export namespace Prisma {
     id?: string
     email: string
     ClerkId: string
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
     incomeSources?: IncomeSourceUncheckedCreateNestedManyWithoutUserInput
     categories?: CategoryUncheckedCreateNestedManyWithoutUserInput
   }
@@ -7276,6 +7542,8 @@ export namespace Prisma {
     id?: string
     name: string
     IsActive?: boolean
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
     user: UserCreateNestedOneWithoutIncomeSourcesInput
   }
 
@@ -7284,6 +7552,8 @@ export namespace Prisma {
     userId: string
     name: string
     IsActive?: boolean
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
   }
 
   export type IncomeSourceCreateOrConnectWithoutTransactionsInput = {
@@ -7295,6 +7565,8 @@ export namespace Prisma {
     id?: string
     name: string
     IsActive?: boolean
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
     user: UserCreateNestedOneWithoutCategoriesInput
   }
 
@@ -7303,6 +7575,8 @@ export namespace Prisma {
     name: string
     userId: string
     IsActive?: boolean
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
   }
 
   export type CategoryCreateOrConnectWithoutTransactionsInput = {
@@ -7325,6 +7599,8 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     ClerkId?: StringFieldUpdateOperationsInput | string
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     incomeSources?: IncomeSourceUpdateManyWithoutUserNestedInput
     categories?: CategoryUpdateManyWithoutUserNestedInput
   }
@@ -7333,6 +7609,8 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     ClerkId?: StringFieldUpdateOperationsInput | string
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     incomeSources?: IncomeSourceUncheckedUpdateManyWithoutUserNestedInput
     categories?: CategoryUncheckedUpdateManyWithoutUserNestedInput
   }
@@ -7352,6 +7630,8 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     IsActive?: BoolFieldUpdateOperationsInput | boolean
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     user?: UserUpdateOneRequiredWithoutIncomeSourcesNestedInput
   }
 
@@ -7360,6 +7640,8 @@ export namespace Prisma {
     userId?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     IsActive?: BoolFieldUpdateOperationsInput | boolean
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type CategoryUpsertWithoutTransactionsInput = {
@@ -7377,6 +7659,8 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     IsActive?: BoolFieldUpdateOperationsInput | boolean
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     user?: UserUpdateOneRequiredWithoutCategoriesNestedInput
   }
 
@@ -7385,12 +7669,16 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     userId?: StringFieldUpdateOperationsInput | string
     IsActive?: BoolFieldUpdateOperationsInput | boolean
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type UserCreateWithoutCategoriesInput = {
     id?: string
     email: string
     ClerkId: string
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
     incomeSources?: IncomeSourceCreateNestedManyWithoutUserInput
     transactions?: TransactionCreateNestedManyWithoutUserInput
   }
@@ -7399,6 +7687,8 @@ export namespace Prisma {
     id?: string
     email: string
     ClerkId: string
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
     incomeSources?: IncomeSourceUncheckedCreateNestedManyWithoutUserInput
     transactions?: TransactionUncheckedCreateNestedManyWithoutUserInput
   }
@@ -7414,6 +7704,8 @@ export namespace Prisma {
     Type: $Enums.TransactionType
     IsActive?: boolean
     date?: Date | string
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
     user: UserCreateNestedOneWithoutTransactionsInput
     IncomeSource: IncomeSourceCreateNestedOneWithoutTransactionsInput
   }
@@ -7426,6 +7718,8 @@ export namespace Prisma {
     Type: $Enums.TransactionType
     IsActive?: boolean
     date?: Date | string
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
   }
 
   export type TransactionCreateOrConnectWithoutCategoryInput = {
@@ -7453,6 +7747,8 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     ClerkId?: StringFieldUpdateOperationsInput | string
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     incomeSources?: IncomeSourceUpdateManyWithoutUserNestedInput
     transactions?: TransactionUpdateManyWithoutUserNestedInput
   }
@@ -7461,6 +7757,8 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     ClerkId?: StringFieldUpdateOperationsInput | string
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     incomeSources?: IncomeSourceUncheckedUpdateManyWithoutUserNestedInput
     transactions?: TransactionUncheckedUpdateManyWithoutUserNestedInput
   }
@@ -7485,6 +7783,8 @@ export namespace Prisma {
     id?: string
     name: string
     IsActive?: boolean
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
   }
 
   export type TransactionCreateManyUserInput = {
@@ -7495,18 +7795,24 @@ export namespace Prisma {
     IsActive?: boolean
     date?: Date | string
     categoryId: string
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
   }
 
   export type CategoryCreateManyUserInput = {
     id?: string
     name: string
     IsActive?: boolean
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
   }
 
   export type IncomeSourceUpdateWithoutUserInput = {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     IsActive?: BoolFieldUpdateOperationsInput | boolean
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     transactions?: TransactionUpdateManyWithoutIncomeSourceNestedInput
   }
 
@@ -7514,6 +7820,8 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     IsActive?: BoolFieldUpdateOperationsInput | boolean
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     transactions?: TransactionUncheckedUpdateManyWithoutIncomeSourceNestedInput
   }
 
@@ -7521,6 +7829,8 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     IsActive?: BoolFieldUpdateOperationsInput | boolean
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type TransactionUpdateWithoutUserInput = {
@@ -7529,6 +7839,8 @@ export namespace Prisma {
     Type?: EnumTransactionTypeFieldUpdateOperationsInput | $Enums.TransactionType
     IsActive?: BoolFieldUpdateOperationsInput | boolean
     date?: DateTimeFieldUpdateOperationsInput | Date | string
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     IncomeSource?: IncomeSourceUpdateOneRequiredWithoutTransactionsNestedInput
     category?: CategoryUpdateOneRequiredWithoutTransactionsNestedInput
   }
@@ -7541,6 +7853,8 @@ export namespace Prisma {
     IsActive?: BoolFieldUpdateOperationsInput | boolean
     date?: DateTimeFieldUpdateOperationsInput | Date | string
     categoryId?: StringFieldUpdateOperationsInput | string
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type TransactionUncheckedUpdateManyWithoutUserInput = {
@@ -7551,12 +7865,16 @@ export namespace Prisma {
     IsActive?: BoolFieldUpdateOperationsInput | boolean
     date?: DateTimeFieldUpdateOperationsInput | Date | string
     categoryId?: StringFieldUpdateOperationsInput | string
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type CategoryUpdateWithoutUserInput = {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     IsActive?: BoolFieldUpdateOperationsInput | boolean
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     transactions?: TransactionUpdateManyWithoutCategoryNestedInput
   }
 
@@ -7564,6 +7882,8 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     IsActive?: BoolFieldUpdateOperationsInput | boolean
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     transactions?: TransactionUncheckedUpdateManyWithoutCategoryNestedInput
   }
 
@@ -7571,6 +7891,8 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     IsActive?: BoolFieldUpdateOperationsInput | boolean
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type TransactionCreateManyIncomeSourceInput = {
@@ -7581,6 +7903,8 @@ export namespace Prisma {
     IsActive?: boolean
     date?: Date | string
     categoryId: string
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
   }
 
   export type TransactionUpdateWithoutIncomeSourceInput = {
@@ -7589,6 +7913,8 @@ export namespace Prisma {
     Type?: EnumTransactionTypeFieldUpdateOperationsInput | $Enums.TransactionType
     IsActive?: BoolFieldUpdateOperationsInput | boolean
     date?: DateTimeFieldUpdateOperationsInput | Date | string
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     user?: UserUpdateOneRequiredWithoutTransactionsNestedInput
     category?: CategoryUpdateOneRequiredWithoutTransactionsNestedInput
   }
@@ -7601,6 +7927,8 @@ export namespace Prisma {
     IsActive?: BoolFieldUpdateOperationsInput | boolean
     date?: DateTimeFieldUpdateOperationsInput | Date | string
     categoryId?: StringFieldUpdateOperationsInput | string
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type TransactionUncheckedUpdateManyWithoutIncomeSourceInput = {
@@ -7611,6 +7939,8 @@ export namespace Prisma {
     IsActive?: BoolFieldUpdateOperationsInput | boolean
     date?: DateTimeFieldUpdateOperationsInput | Date | string
     categoryId?: StringFieldUpdateOperationsInput | string
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type TransactionCreateManyCategoryInput = {
@@ -7621,6 +7951,8 @@ export namespace Prisma {
     Type: $Enums.TransactionType
     IsActive?: boolean
     date?: Date | string
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
   }
 
   export type TransactionUpdateWithoutCategoryInput = {
@@ -7629,6 +7961,8 @@ export namespace Prisma {
     Type?: EnumTransactionTypeFieldUpdateOperationsInput | $Enums.TransactionType
     IsActive?: BoolFieldUpdateOperationsInput | boolean
     date?: DateTimeFieldUpdateOperationsInput | Date | string
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     user?: UserUpdateOneRequiredWithoutTransactionsNestedInput
     IncomeSource?: IncomeSourceUpdateOneRequiredWithoutTransactionsNestedInput
   }
@@ -7641,6 +7975,8 @@ export namespace Prisma {
     Type?: EnumTransactionTypeFieldUpdateOperationsInput | $Enums.TransactionType
     IsActive?: BoolFieldUpdateOperationsInput | boolean
     date?: DateTimeFieldUpdateOperationsInput | Date | string
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type TransactionUncheckedUpdateManyWithoutCategoryInput = {
@@ -7651,6 +7987,8 @@ export namespace Prisma {
     Type?: EnumTransactionTypeFieldUpdateOperationsInput | $Enums.TransactionType
     IsActive?: BoolFieldUpdateOperationsInput | boolean
     date?: DateTimeFieldUpdateOperationsInput | Date | string
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
 

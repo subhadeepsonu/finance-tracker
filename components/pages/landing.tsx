@@ -1,5 +1,4 @@
-import { ArrowRight, TrendingUp, Zap, PieChart, CheckCircle2 } from 'lucide-react'
-import { Button } from '@/components/ui/button'
+import { TrendingUp, Zap, PieChart, CheckCircle2 } from 'lucide-react'
 
 export default function LandingPage() {
     return (

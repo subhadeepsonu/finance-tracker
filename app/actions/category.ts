@@ -7,6 +7,9 @@ export async function getAllCategories(userId: string) {
             where: {
                 userId: userId,
                 IsActive: true
+            },
+            orderBy: {
+                CreatedAt: "desc"
             }
         });
         return categories;

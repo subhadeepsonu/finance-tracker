@@ -4,17 +4,36 @@ import { prisma } from "@/lib/prisma";
 
 export async function getAllTransactions(userId: string, sourceId: string) {
     try {
-        const resp = await prisma.transaction.findMany({
+        const resp = await prisma.incomeSource.findUnique({
             where: {
-                userId,
-                incomeSourceId: sourceId,
-                IsActive: true
+                id: sourceId,
+                userId
             },
             include: {
-                category: true
-            }
+                transactions: {
+                    where: {
+                        IsActive: true
+                    },
+                    orderBy: {
+                        CreatedAt: "desc"
+                    },
+                }
+            },
         })
-        return resp
+        let expense = 0;
+        let income = 0;
+        for (const tx of resp?.transactions || []) {
+            if (tx.Type === "EXPENSE") {
+                expense += tx.amount;
+            } else {
+                income += tx.amount;
+            }
+        }
+        return {
+            transactions: resp?.transactions || [],
+            income,
+            expense
+        }
     }
     catch (error) {
         console.error("Error fetching transactions:", error);

@@ -26,6 +26,7 @@ export async function getCurrentUser() {
             data: {
                 ClerkId: userId,
                 email: email || "no-email",
+                
             },
         });
     }

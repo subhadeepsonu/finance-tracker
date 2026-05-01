@@ -123,14 +123,18 @@ exports.Prisma.TransactionIsolationLevel = makeStrictEnum({
 exports.Prisma.UserScalarFieldEnum = {
   id: 'id',
   email: 'email',
-  ClerkId: 'ClerkId'
+  ClerkId: 'ClerkId',
+  CreatedAt: 'CreatedAt',
+  UpdatedAt: 'UpdatedAt'
 };
 
 exports.Prisma.IncomeSourceScalarFieldEnum = {
   id: 'id',
   userId: 'userId',
   name: 'name',
-  IsActive: 'IsActive'
+  IsActive: 'IsActive',
+  CreatedAt: 'CreatedAt',
+  UpdatedAt: 'UpdatedAt'
 };
 
 exports.Prisma.TransactionScalarFieldEnum = {
@@ -141,14 +145,18 @@ exports.Prisma.TransactionScalarFieldEnum = {
   Type: 'Type',
   IsActive: 'IsActive',
   date: 'date',
-  categoryId: 'categoryId'
+  categoryId: 'categoryId',
+  CreatedAt: 'CreatedAt',
+  UpdatedAt: 'UpdatedAt'
 };
 
 exports.Prisma.CategoryScalarFieldEnum = {
   id: 'id',
   name: 'name',
   userId: 'userId',
-  IsActive: 'IsActive'
+  IsActive: 'IsActive',
+  CreatedAt: 'CreatedAt',
+  UpdatedAt: 'UpdatedAt'
 };
 
 exports.Prisma.SortOrder = {

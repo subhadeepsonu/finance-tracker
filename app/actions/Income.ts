@@ -7,6 +7,9 @@ export async function getAllIncomes(userId: string) {
             where: {
                 userId,
                 IsActive: true
+            },
+            orderBy:{
+                CreatedAt: "desc"
             }
         })
         return Incomes;
