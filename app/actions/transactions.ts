@@ -13,10 +13,14 @@ export async function getAllTransactions(userId: string, sourceId: string) {
                 transactions: {
                     where: {
                         IsActive: true
+
                     },
                     orderBy: {
                         CreatedAt: "desc"
                     },
+                    include: {
+                        category: true
+                    }
                 }
             },
         })
