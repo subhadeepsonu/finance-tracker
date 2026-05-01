@@ -19,29 +19,31 @@ export default function IncomeCard({ income, userId }: { income: Income; userId:
 
     return (
         <>
-            <div className="flex items-center justify-between border rounded-lg px-4 py-3 shadow-sm bg-white">
+            <div className="flex items-center justify-between border border-blue-100 rounded-xl px-4 py-3.5 bg-white hover:border-blue-300 hover:bg-blue-50 transition-colors group">
                 <Link
                     href={`/dashboard/${income.id}`}
-                    className="font-medium text-gray-800 hover:underline hover:text-blue-600 transition-colors"
+                    className="font-medium text-slate-800 hover:text-blue-600 transition-colors text-sm"
                 >
                     {income.name}
                 </Link>
-                <div className="flex gap-2">
+                <div className="flex gap-1">
                     <Button
                         variant="ghost"
                         size="icon"
                         onClick={() => setEditOpen(true)}
                         aria-label="Edit"
+                        className="h-8 w-8 text-slate-400 hover:text-blue-600 hover:bg-blue-100"
                     >
-                        <Pencil className="w-4 h-4 text-blue-500" />
+                        <Pencil className="w-3.5 h-3.5" />
                     </Button>
                     <Button
                         variant="ghost"
                         size="icon"
                         onClick={() => setDeleteOpen(true)}
                         aria-label="Delete"
+                        className="h-8 w-8 text-slate-400 hover:text-red-500 hover:bg-red-50"
                     >
-                        <Trash2 className="w-4 h-4 text-red-500" />
+                        <Trash2 className="w-3.5 h-3.5" />
                     </Button>
                 </div>
             </div>

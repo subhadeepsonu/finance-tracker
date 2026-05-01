@@ -51,7 +51,7 @@ export default function AddIncomeDialog({
         },
         onSuccess: async () => {
             await queryClient.invalidateQueries({ queryKey: ["incomeSources"] })
-            toast.success("Income source added!")
+            toast.success("Income bucket added!")
             form.reset()
             onOpenChange(false)
         },
@@ -66,11 +66,13 @@ export default function AddIncomeDialog({
 
     return (
         <AlertDialog open={open} onOpenChange={onOpenChange}>
-            <AlertDialogContent>
+            <AlertDialogContent className="border-blue-100">
                 <AlertDialogHeader>
-                    <AlertDialogTitle>Add Income Source</AlertDialogTitle>
-                    <AlertDialogDescription>
-                        Enter a name for the new income source.
+                    <AlertDialogTitle className="text-slate-900">
+                        Add income bucket
+                    </AlertDialogTitle>
+                    <AlertDialogDescription className="text-slate-500">
+                        Enter a name for the new bucket.
                     </AlertDialogDescription>
                 </AlertDialogHeader>
 
@@ -87,6 +89,7 @@ export default function AddIncomeDialog({
                                         id="add-income-name"
                                         placeholder="e.g. Freelance"
                                         aria-invalid={fieldState.invalid}
+                                        className="border-blue-100 focus:border-blue-400 focus:ring-blue-50"
                                     />
                                     {fieldState.invalid && (
                                         <FieldError errors={[fieldState.error]} />
@@ -98,13 +101,16 @@ export default function AddIncomeDialog({
                 </form>
 
                 <AlertDialogFooter>
-                    <AlertDialogCancel onClick={() => form.reset()}>Cancel</AlertDialogCancel>
+                    <AlertDialogCancel onClick={() => form.reset()}>
+                        Cancel
+                    </AlertDialogCancel>
                     <Button
                         type="submit"
                         form="add-income-form"
                         disabled={isPending}
+                        className="bg-blue-600 hover:bg-blue-700 text-white"
                     >
-                        {isPending ? "Adding..." : "Add"}
+                        {isPending ? "Adding..." : "Add bucket"}
                     </Button>
                 </AlertDialogFooter>
             </AlertDialogContent>

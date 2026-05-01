@@ -9,7 +9,6 @@ import { Button } from "@/components/ui/button"
 import TransactionCard from "../ui/cards/transacsion"
 import AddTransactionDialog from "../ui/forms/add-transaction"
 
-
 export default function TransactionsDashboard({
     userId,
     incomeSourceId,
@@ -37,30 +36,47 @@ export default function TransactionsDashboard({
     )
 
     return (
-        <div className="max-w-xl mx-auto mt-10 py-10 px-4 space-y-4">
-            <div className="flex items-center justify-between">
-                <h1 className="text-2xl font-bold">Transactions</h1>
-                <Button onClick={() => setAddOpen(true)}>
-                    <Plus className="w-4 h-4 mr-2" />
-                    Add New
-                </Button>
-            </div>
+        <div className="min-h-screen w-full pt-24 pb-12 px-4 sm:px-6 lg:px-8">
+            <div className="mx-auto max-w-7xl">
 
-            {transactions && transactions.length > 0 ? (
-                <div className="space-y-2">
-                    {transactions.map((transaction) => (
-                        <TransactionCard
-                            key={transaction.id}
-                            transaction={transaction}
-                            userId={userId}
-                        />
-                    ))}
+                {/* Header */}
+                <div className="flex items-center justify-between mb-8">
+                    <div>
+                        <h1 className="text-3xl font-bold text-slate-900">Transactions</h1>
+                        <p className="text-sm text-slate-500 mt-1">Manage your transactions</p>
+                    </div>
+                    <Button
+                        onClick={() => setAddOpen(true)}
+                        className="bg-blue-600 hover:bg-blue-700 text-white"
+                    >
+                        <Plus className="w-4 h-4 mr-2" />
+                        Add Transaction
+                    </Button>
                 </div>
-            ) : (
-                <p className="text-center text-gray-500 py-10">
-                    No transactions yet. Add one to get started.
-                </p>
-            )}
+
+                {/* Content */}
+                {transactions && transactions.length > 0 ? (
+                    <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                        {transactions.map((transaction) => (
+                            <TransactionCard
+                                key={transaction.id}
+                                transaction={transaction}
+                                userId={userId}
+                            />
+                        ))}
+                    </div>
+                ) : (
+                    <div className="flex flex-col justify-center items-center h-[60vh] gap-3">
+                        <div className="h-12 w-12 rounded-full bg-blue-50 flex items-center justify-center">
+                            <Plus className="w-5 h-5 text-blue-400" />
+                        </div>
+                        <p className="text-slate-500 text-base">
+                            No transactions yet. Add one to get started.
+                        </p>
+                    </div>
+                )}
+
+            </div>
 
             <AddTransactionDialog
                 open={addOpen}

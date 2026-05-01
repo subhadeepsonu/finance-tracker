@@ -48,7 +48,6 @@ export default function EditIncomeDialog({
         defaultValues: { Name: income.name },
     })
 
-    // Sync form value when income changes
     useEffect(() => {
         form.reset({ Name: income.name })
     }, [income, form])
@@ -61,7 +60,7 @@ export default function EditIncomeDialog({
         },
         onSuccess: async () => {
             await queryClient.invalidateQueries({ queryKey: ["incomeSources"] })
-            toast.success("Income source updated!")
+            toast.success("Income bucket updated!")
             onOpenChange(false)
         },
         onError: (error) => {
@@ -75,11 +74,13 @@ export default function EditIncomeDialog({
 
     return (
         <AlertDialog open={open} onOpenChange={onOpenChange}>
-            <AlertDialogContent>
+            <AlertDialogContent className="border-blue-100">
                 <AlertDialogHeader>
-                    <AlertDialogTitle>Edit Income Source</AlertDialogTitle>
-                    <AlertDialogDescription>
-                        Update the name for <strong>{income.name}</strong>.
+                    <AlertDialogTitle className="text-slate-900">
+                        Edit income bucket
+                    </AlertDialogTitle>
+                    <AlertDialogDescription className="text-slate-500">
+                        Update the name for <strong className="text-slate-700">{income.name}</strong>.
                     </AlertDialogDescription>
                 </AlertDialogHeader>
 
@@ -95,6 +96,7 @@ export default function EditIncomeDialog({
                                         {...field}
                                         id="edit-income-name"
                                         aria-invalid={fieldState.invalid}
+                                        className="border-blue-100 focus:border-blue-400 focus:ring-blue-50"
                                     />
                                     {fieldState.invalid && (
                                         <FieldError errors={[fieldState.error]} />
@@ -111,8 +113,9 @@ export default function EditIncomeDialog({
                         type="submit"
                         form="edit-income-form"
                         disabled={isPending}
+                        className="bg-blue-600 hover:bg-blue-700 text-white"
                     >
-                        {isPending ? "Saving..." : "Save Changes"}
+                        {isPending ? "Saving..." : "Save changes"}
                     </Button>
                 </AlertDialogFooter>
             </AlertDialogContent>

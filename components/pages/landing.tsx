@@ -4,9 +4,6 @@ import { Button } from '@/components/ui/button'
 export default function LandingPage() {
     return (
         <div className="min-h-screen bg-white">
-            {/* Navigation */}
-
-
             {/* Hero Section */}
             <section className="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8">
                 <div className="mx-auto max-w-4xl text-center">
@@ -27,14 +24,7 @@ export default function LandingPage() {
                         Multiple income streams? Multiple goals? BucketPay lets you organize your finances with separate "income buckets" so you know exactly where every dollar goes—and what you have left.
                     </p>
 
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white h-12 px-8 text-base font-semibold">
-                            Start Free <ArrowRight className="ml-2 h-5 w-5" />
-                        </Button>
-                        <Button size="lg" variant="outline" className="h-12 px-8 text-base font-semibold border-slate-300">
-                            Learn More
-                        </Button>
-                    </div>
+
                 </div>
 
                 {/* Hero Visual */}
@@ -161,9 +151,7 @@ export default function LandingPage() {
                     <p className="text-xl text-blue-100 mb-8">
                         It&apos;s completely free. No credit card needed.
                     </p>
-                    <Button size="lg" className="bg-white hover:bg-slate-100 text-blue-600 h-12 px-8 text-base font-semibold">
-                        Start Using BucketPay <ArrowRight className="ml-2 h-5 w-5" />
-                    </Button>
+
                 </div>
             </section>
 

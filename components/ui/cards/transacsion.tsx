@@ -32,41 +32,55 @@ export default function TransactionCard({
 
     return (
         <>
-            <div className="flex items-center justify-between border rounded-lg px-4 py-3 shadow-sm bg-white">
-                <div className="flex flex-col gap-0.5">
-                    <span className="font-medium text-gray-800">
-                        {transaction.category?.name ?? "Uncategorized"}
-                    </span>
-                    {transaction.createdAt && (
-                        <span className="text-xs text-gray-400">
-                            {new Date(transaction.createdAt).toLocaleDateString()}
+            <div className="flex flex-col gap-3 border border-slate-200 rounded-xl px-4 py-4 shadow-sm bg-white hover:shadow-md transition-shadow">
+                {/* Top row: category + date */}
+                <div className="flex items-start justify-between">
+                    <div className="flex flex-col gap-0.5">
+                        <span className="font-medium text-slate-800">
+                            {transaction.category?.name ?? "Uncategorized"}
                         </span>
-                    )}
-                </div>
-
-                <div className="flex items-center gap-3">
-                    <Badge variant={isIncome ? "default" : "destructive"}>
-                        {isIncome ? "+" : "-"}₹{transaction.amount.toFixed(2)}
-                    </Badge>
-                    <Badge variant="outline" className="text-xs">
+                        {transaction.createdAt && (
+                            <span className="text-xs text-slate-400">
+                                {new Date(transaction.createdAt).toLocaleDateString()}
+                            </span>
+                        )}
+                    </div>
+                    <Badge variant="outline" className="text-xs text-slate-500 border-slate-200">
                         {transaction.Type.charAt(0) + transaction.Type.slice(1).toLowerCase()}
                     </Badge>
-                    <Button
-                        variant="ghost"
-                        size="icon"
-                        onClick={() => setEditOpen(true)}
-                        aria-label="Edit"
+                </div>
+
+                {/* Bottom row: amount + actions */}
+                <div className="flex items-center justify-between">
+                    <Badge
+                        variant={isIncome ? "default" : "destructive"}
+                        className={isIncome
+                            ? "bg-emerald-50 text-emerald-700 border-emerald-200 hover:bg-emerald-50"
+                            : "bg-red-50 text-red-600 border-red-200 hover:bg-red-50"
+                        }
                     >
-                        <Pencil className="w-4 h-4 text-blue-500" />
-                    </Button>
-                    <Button
-                        variant="ghost"
-                        size="icon"
-                        onClick={() => setDeleteOpen(true)}
-                        aria-label="Delete"
-                    >
-                        <Trash2 className="w-4 h-4 text-red-500" />
-                    </Button>
+                        {isIncome ? "+" : "-"}₹{transaction.amount.toFixed(2)}
+                    </Badge>
+                    <div className="flex gap-1">
+                        <Button
+                            variant="ghost"
+                            size="icon"
+                            onClick={() => setEditOpen(true)}
+                            aria-label="Edit"
+                            className="hover:bg-blue-50"
+                        >
+                            <Pencil className="w-4 h-4 text-blue-500" />
+                        </Button>
+                        <Button
+                            variant="ghost"
+                            size="icon"
+                            onClick={() => setDeleteOpen(true)}
+                            aria-label="Delete"
+                            className="hover:bg-red-50"
+                        >
+                            <Trash2 className="w-4 h-4 text-red-500" />
+                        </Button>
+                    </div>
                 </div>
             </div>
 

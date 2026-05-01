@@ -74,11 +74,13 @@ export default function EditCategoryDialog({
 
     return (
         <AlertDialog open={open} onOpenChange={onOpenChange}>
-            <AlertDialogContent>
-                <AlertDialogHeader>
-                    <AlertDialogTitle>Edit Category</AlertDialogTitle>
-                    <AlertDialogDescription>
-                        Update the name for <strong>{category.name}</strong>.
+            <AlertDialogContent className="rounded-2xl p-6 shadow-lg">
+                <AlertDialogHeader className="mb-2">
+                    <AlertDialogTitle className="text-xl font-bold text-slate-900">
+                        Edit Category
+                    </AlertDialogTitle>
+                    <AlertDialogDescription className="text-sm text-slate-500">
+                        Update the name for <strong className="text-slate-700">{category.name}</strong>.
                     </AlertDialogDescription>
                 </AlertDialogHeader>
 
@@ -89,11 +91,17 @@ export default function EditCategoryDialog({
                             control={form.control}
                             render={({ field, fieldState }) => (
                                 <Field data-invalid={fieldState.invalid}>
-                                    <FieldLabel htmlFor="edit-category-name">Name</FieldLabel>
+                                    <FieldLabel
+                                        htmlFor="edit-category-name"
+                                        className="text-sm font-medium text-slate-700"
+                                    >
+                                        Name
+                                    </FieldLabel>
                                     <Input
                                         {...field}
                                         id="edit-category-name"
                                         aria-invalid={fieldState.invalid}
+                                        className="mt-1 rounded-lg border-slate-200 focus:ring-blue-500 focus:border-blue-500"
                                     />
                                     {fieldState.invalid && (
                                         <FieldError errors={[fieldState.error]} />
@@ -104,9 +112,16 @@ export default function EditCategoryDialog({
                     </FieldGroup>
                 </form>
 
-                <AlertDialogFooter>
-                    <AlertDialogCancel>Cancel</AlertDialogCancel>
-                    <Button type="submit" form="edit-category-form" disabled={isPending}>
+                <AlertDialogFooter className="mt-4 gap-2">
+                    <AlertDialogCancel className="rounded-lg border-slate-200 text-slate-600 hover:bg-slate-50">
+                        Cancel
+                    </AlertDialogCancel>
+                    <Button
+                        type="submit"
+                        form="edit-category-form"
+                        disabled={isPending}
+                        className="rounded-lg bg-blue-600 hover:bg-blue-700 text-white"
+                    >
                         {isPending ? "Saving..." : "Save Changes"}
                     </Button>
                 </AlertDialogFooter>

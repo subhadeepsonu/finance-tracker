@@ -5,7 +5,6 @@ import { Controller, useForm, type Resolver } from "react-hook-form"
 import { toast } from "sonner"
 import * as z from "zod"
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query"
-
 import { TransactionType } from "@/generated/client"
 
 import { Button } from "@/components/ui/button"
@@ -58,7 +57,6 @@ export default function AddTransactionDialog({
             amount: 0,
             categoryId: "",
             Type: TransactionType.EXPENSE,
-
         },
     })
 
@@ -72,7 +70,6 @@ export default function AddTransactionDialog({
 
     const { mutate: addTransaction, isPending } = useMutation({
         mutationFn: async (values: z.infer<typeof formSchema>) => {
-            console.log("Adding transaction with values:", values, userId, incomeSourceId)
             return await createTransaction(
                 userId,
                 incomeSourceId,
@@ -98,10 +95,12 @@ export default function AddTransactionDialog({
 
     return (
         <AlertDialog open={open} onOpenChange={onOpenChange}>
-            <AlertDialogContent>
-                <AlertDialogHeader>
-                    <AlertDialogTitle>Add Transaction</AlertDialogTitle>
-                    <AlertDialogDescription>
+            <AlertDialogContent className="rounded-2xl p-6 shadow-lg">
+                <AlertDialogHeader className="mb-2">
+                    <AlertDialogTitle className="text-xl font-bold text-slate-900">
+                        Add Transaction
+                    </AlertDialogTitle>
+                    <AlertDialogDescription className="text-sm text-slate-500">
                         Enter the details for the new transaction.
                     </AlertDialogDescription>
                 </AlertDialogHeader>
@@ -114,7 +113,12 @@ export default function AddTransactionDialog({
                             control={form.control}
                             render={({ field, fieldState }) => (
                                 <Field data-invalid={fieldState.invalid}>
-                                    <FieldLabel htmlFor="add-transaction-amount">Amount</FieldLabel>
+                                    <FieldLabel
+                                        htmlFor="add-transaction-amount"
+                                        className="text-sm font-medium text-slate-700"
+                                    >
+                                        Amount
+                                    </FieldLabel>
                                     <Input
                                         {...field}
                                         id="add-transaction-amount"
@@ -122,6 +126,7 @@ export default function AddTransactionDialog({
                                         step="0.01"
                                         placeholder="0.00"
                                         aria-invalid={fieldState.invalid}
+                                        className="mt-1 rounded-lg border-slate-200 focus:ring-blue-500 focus:border-blue-500"
                                     />
                                     {fieldState.invalid && (
                                         <FieldError errors={[fieldState.error]} />
@@ -136,13 +141,22 @@ export default function AddTransactionDialog({
                             control={form.control}
                             render={({ field, fieldState }) => (
                                 <Field data-invalid={fieldState.invalid}>
-                                    <FieldLabel htmlFor="add-transaction-category">Category</FieldLabel>
+                                    <FieldLabel
+                                        htmlFor="add-transaction-category"
+                                        className="text-sm font-medium text-slate-700"
+                                    >
+                                        Category
+                                    </FieldLabel>
                                     <Select
                                         value={field.value}
                                         onValueChange={field.onChange}
                                         disabled={categoriesLoading}
                                     >
-                                        <SelectTrigger id="add-transaction-category" aria-invalid={fieldState.invalid}>
+                                        <SelectTrigger
+                                            id="add-transaction-category"
+                                            aria-invalid={fieldState.invalid}
+                                            className="mt-1 rounded-lg border-slate-200"
+                                        >
                                             <SelectValue placeholder={categoriesLoading ? "Loading..." : "Select a category"} />
                                         </SelectTrigger>
                                         <SelectContent>
@@ -171,9 +185,17 @@ export default function AddTransactionDialog({
                             control={form.control}
                             render={({ field, fieldState }) => (
                                 <Field data-invalid={fieldState.invalid}>
-                                    <FieldLabel htmlFor="add-transaction-type">Type</FieldLabel>
+                                    <FieldLabel
+                                        htmlFor="add-transaction-type"
+                                        className="text-sm font-medium text-slate-700"
+                                    >
+                                        Type
+                                    </FieldLabel>
                                     <Select value={field.value} onValueChange={field.onChange}>
-                                        <SelectTrigger id="add-transaction-type">
+                                        <SelectTrigger
+                                            id="add-transaction-type"
+                                            className="mt-1 rounded-lg border-slate-200"
+                                        >
                                             <SelectValue placeholder="Select type" />
                                         </SelectTrigger>
                                         <SelectContent>
@@ -193,10 +215,20 @@ export default function AddTransactionDialog({
                     </FieldGroup>
                 </form>
 
-                <AlertDialogFooter>
-                    <AlertDialogCancel onClick={() => form.reset()}>Cancel</AlertDialogCancel>
-                    <Button type="submit" form="add-transaction-form" disabled={isPending}>
-                        {isPending ? "Adding..." : "Add"}
+                <AlertDialogFooter className="mt-4 gap-2">
+                    <AlertDialogCancel
+                        onClick={() => form.reset()}
+                        className="rounded-lg border-slate-200 text-slate-600 hover:bg-slate-50"
+                    >
+                        Cancel
+                    </AlertDialogCancel>
+                    <Button
+                        type="submit"
+                        form="add-transaction-form"
+                        disabled={isPending}
+                        className="rounded-lg bg-blue-600 hover:bg-blue-700 text-white"
+                    >
+                        {isPending ? "Adding..." : "Add Transaction"}
                     </Button>
                 </AlertDialogFooter>
             </AlertDialogContent>

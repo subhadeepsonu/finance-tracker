@@ -36,7 +36,7 @@ export default function DeleteIncomeDialog({
         },
         onSuccess: async () => {
             await queryClient.invalidateQueries({ queryKey: ["incomeSources"] })
-            toast.success("Income source deleted.")
+            toast.success("Income bucket deleted.")
             onOpenChange(false)
         },
         onError: (error) => {
@@ -46,14 +46,22 @@ export default function DeleteIncomeDialog({
 
     return (
         <AlertDialog open={open} onOpenChange={onOpenChange}>
-            <AlertDialogContent>
+            <AlertDialogContent className="border-blue-100">
                 <AlertDialogHeader>
-                    <AlertDialogTitle>Delete Income Source</AlertDialogTitle>
-                    <AlertDialogDescription>
-                        Are you sure you want to delete <strong>{incomeName}</strong>?
+                    <AlertDialogTitle className="text-slate-900">
+                        Delete income bucket
+                    </AlertDialogTitle>
+                    <AlertDialogDescription className="text-slate-500">
                         This action cannot be undone.
                     </AlertDialogDescription>
                 </AlertDialogHeader>
+
+                <div className="rounded-lg bg-blue-50 border border-blue-100 px-4 py-3 text-sm text-blue-900">
+                    Are you sure you want to delete{" "}
+                    <strong className="text-blue-700">{incomeName}</strong>?
+                    All associated data will be permanently removed.
+                </div>
+
                 <AlertDialogFooter>
                     <AlertDialogCancel>Cancel</AlertDialogCancel>
                     <Button

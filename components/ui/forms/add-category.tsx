@@ -6,7 +6,6 @@ import { toast } from "sonner"
 import * as z from "zod"
 import { useMutation, useQueryClient } from "@tanstack/react-query"
 
-
 import { Button } from "@/components/ui/button"
 import {
     AlertDialog,
@@ -67,10 +66,12 @@ export default function AddCategoryDialog({
 
     return (
         <AlertDialog open={open} onOpenChange={onOpenChange}>
-            <AlertDialogContent>
-                <AlertDialogHeader>
-                    <AlertDialogTitle>Add Category</AlertDialogTitle>
-                    <AlertDialogDescription>
+            <AlertDialogContent className="rounded-2xl p-6 shadow-lg">
+                <AlertDialogHeader className="mb-2">
+                    <AlertDialogTitle className="text-xl font-bold text-slate-900">
+                        Add Category
+                    </AlertDialogTitle>
+                    <AlertDialogDescription className="text-sm text-slate-500">
                         Enter a name for the new category.
                     </AlertDialogDescription>
                 </AlertDialogHeader>
@@ -82,12 +83,18 @@ export default function AddCategoryDialog({
                             control={form.control}
                             render={({ field, fieldState }) => (
                                 <Field data-invalid={fieldState.invalid}>
-                                    <FieldLabel htmlFor="add-category-name">Name</FieldLabel>
+                                    <FieldLabel
+                                        htmlFor="add-category-name"
+                                        className="text-sm font-medium text-slate-700"
+                                    >
+                                        Name
+                                    </FieldLabel>
                                     <Input
                                         {...field}
                                         id="add-category-name"
                                         placeholder="e.g. Food & Drink"
                                         aria-invalid={fieldState.invalid}
+                                        className="mt-1 rounded-lg border-slate-200 focus:ring-blue-500 focus:border-blue-500"
                                     />
                                     {fieldState.invalid && (
                                         <FieldError errors={[fieldState.error]} />
@@ -98,10 +105,20 @@ export default function AddCategoryDialog({
                     </FieldGroup>
                 </form>
 
-                <AlertDialogFooter>
-                    <AlertDialogCancel onClick={() => form.reset()}>Cancel</AlertDialogCancel>
-                    <Button type="submit" form="add-category-form" disabled={isPending}>
-                        {isPending ? "Adding..." : "Add"}
+                <AlertDialogFooter className="mt-4 gap-2">
+                    <AlertDialogCancel
+                        onClick={() => form.reset()}
+                        className="rounded-lg border-slate-200 text-slate-600 hover:bg-slate-50"
+                    >
+                        Cancel
+                    </AlertDialogCancel>
+                    <Button
+                        type="submit"
+                        form="add-category-form"
+                        disabled={isPending}
+                        className="rounded-lg bg-blue-600 hover:bg-blue-700 text-white"
+                    >
+                        {isPending ? "Adding..." : "Add Category"}
                     </Button>
                 </AlertDialogFooter>
             </AlertDialogContent>
